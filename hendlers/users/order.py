@@ -11,7 +11,7 @@ from loader import dp, bot
 from SQLBD import SQL
 from menu import give_menu
 from messages.user_messages import start_order_message, second_order_message, third_order_message, ask_location, \
-    ask_contact, give_salat, give_fruit, give_order_text, give_text_from_order, admin_order_text, what_time_delivered
+    ask_contact, give_salat, give_fruit, give_order_text, admin_order_text, what_time_delivered
 from times import give_weak_day
 from utils.notify_admins import gosha
 
@@ -88,10 +88,10 @@ async def location(call: types.callback_query, callback_data: dict):
 @dp.message_handler(content_types=["location"])
 async def location(message: types.Message):
     if message.location is not None:
-        await bot.send_message(text='location ok',
+        await bot.send_message(text='Локация принята',
                                chat_id=message.chat.id,
                                reply_markup=ReplyKeyboardRemove())
-        await bot.send_message(text='order done',
+        await bot.send_message(text='Заказ принят',
                                chat_id=message.chat.id,
                                reply_markup=InlineKeyboardMarkup(row_width=1).add(home))
         for admin in admins:

@@ -261,7 +261,7 @@ class SQL:
 
     def add_order(self, time, userid):
         try:
-            self.cursor.execute(f"UPDATE Orders SET Comment = '{time}' WHERE userid = {userid} and Date = {give_date()}")
+            self.cursor.execute(f"UPDATE Orders SET Comment = '{time}' WHERE userid = {userid} and Date = '{give_date()}'")
         except sqlite3.Error as error:
             text = f'Ошибка при работе с SQLite add_order, {error}'
             asyncio.create_task(info_admin(text))

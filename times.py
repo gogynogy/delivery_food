@@ -8,7 +8,6 @@ def give_time():
 
 def give_weak_day():
     now = datetime.today().isoweekday()
-    now = 3
     return now
 
 def give_date():
