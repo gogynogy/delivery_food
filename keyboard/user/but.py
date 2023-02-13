@@ -17,7 +17,7 @@ start_order = InlineKeyboardButton('Сделать заказ', callback_data="s
 fruit = InlineKeyboardButton('fruit stakan', callback_data="fruit")
 contin_salat = InlineKeyboardButton('Продолжить', callback_data="contin")
 contin_fruit = InlineKeyboardButton('Продолжить', callback_data="contin_fruit")
-order_done = InlineKeyboardButton('Order', callback_data="order_done")
+order_done = InlineKeyboardButton('Сделать заказ', callback_data="order_done")
 
 
 give_location = KeyboardButton('Отправить свою локацию', request_location=True)
