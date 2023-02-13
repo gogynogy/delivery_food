@@ -102,6 +102,8 @@ async def location(message: types.Message):
                                 message.location.latitude,
                                 message.location.longitude)
     if not message.chat.username:
-        await bot.send_message(text='Привет, у тебя отсутствует юзернейм, или мы не можем'
+        await bot.send_message(chat_id=message.chat.id,
+                               text='Привет, у тебя отсутствует юзернейм, или мы не можем'
                                     ' написать тебе изза настроек приватности.\n\n'
-                                    'напиши: @matrix77777')
+                                    'напиши: @matrix77777',
+                               reply_markup=InlineKeyboardMarkup(row_width=1).add(home))
